@@ -1,14 +1,17 @@
-project(project LANGUAGES CXX)
+project(server LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(${PROJECT_NAME}
+add_executable(server
     src/main.cpp
 )
+include_directories(include)
 
-target_include_directories(client
+target_include_directories(server
         PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/src
-            ${CMAKE_SOURCE_DIR}/vendor/asio/asio/include
+        PUBLIC
+            ${CMAKE_SOURCE_DIR}/common/
+            ${CMAKE_SOURCE_DIR}/vendor/asio/asio/include/
             )

@@ -1,5 +1,9 @@
-#include <asio.hpp>
+#include "game.hpp"
 
-int main(int argc, char *argv[])
+int main()
 {
+    Game game;
+	game.Connect("127.0.0.1", 60000);
+    game.Start();
+    return 0;
 }
